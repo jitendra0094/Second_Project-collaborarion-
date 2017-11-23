@@ -1,0 +1,43 @@
+<div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	 <link href="assets/mycss/blogpost.css" rel="stylesheet">
+
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="pannel-heading">
+<div>{{blogPost.blogTitle}}</div>
+<span><strong>  Created By:</strong>{{blogPost.postedBy.username}}</span>
+<span><strong> on: </strong>{{blogPost.postedOn | date : 'MM/dd/yyyy HH:mm'}}</span>
+
+</div>
+<hr>
+<div class="panel-body">{{blogPost.blogContent}}</div>
+
+</div>
+</div>
+</div>
+
+
+{{blogPost.likes}} likes
+<a><span class="glyphicon glyphicon-thumbs-up" ng-class="isLiked?'liked':'default' " ng-click="updateLikes()"></span></a>
+
+<br>
+
+<b>Enter Blog Comments</b>
+<ul>
+<li ng-repeat="blogComment in blogComments" style="list: 'none' ">
+{{blogComment.commentText}}
+<strong>by</strong>{{blogComment.commentedBy.username}}
+<strong>on</strong>{{blogComment.commentedOn | date :'medium'}}
+</li>
+</ul>
+<br>
+
+<div>
+<textarea rows="3" cols="40" ng-model="blogComment.commentText" placeholder="Write a comment"></textarea>
+
+
+<button class="btn btn-primary" value="Post Comment" ng-click="addComment()">Post Comment</button> 
+</div>
+</div>

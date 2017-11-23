@@ -1,0 +1,39 @@
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+body
+{
+    background-image: url("image/bgimage.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    background-attachment: fixed;
+}
+</style>
+</head>
+
+  <h2 style="text-align: center; color: #0000b3"><font face="Algerian"><h2><b><strong>Pending Friend Request</strong></b></h2></font></h2>
+  <br><br>
+ <div style=" box-shadow: 5px 5px 5px #000;" >
+  
+  
+  <center><span ng-if="pendingRequests.length==0"><b><h2><strong>You have no any Friend request </strong></h2></b></span></center>
+   
+<table class="table table-striped">
+<tbody>
+<div style=" box-shadow: 5px 5px 5px #000;" > 
+<div class="col-sm-7"  class="row" style="text-align: center; width="400px">
+<tr ng-repeat="request in pendingRequests">
+<td><img src="http://localhost:8080/ColleborationMiddleware/getimage/{{request.fromId}}" height="80px" width="80px" 
+alt="Image Not Available" class="img-circle">   </td>     
+<td style="color: black"><h4><strong>{{request.email}} </strong> </h4></td>	
+<td style="color: black"><h4><strong>{{request.firstname}} {{request.surname}} </strong></h4></td>	
+<td style="color: black"><h5><strong>{{request.role}} </strong> </h5></td>	
+<td><a class="btn btn-primary" ng-click="updatePendingRequest(request, 'A')">Accept Friend Request</a></td>
+<!-- request.status=P -->
+<td><a class="btn btn-warning" ng-click="updatePendingRequest(request, 'D')">Delete Friend Request</a></td>
+              
+</tr>
+</div>
+</tbody>
+</table> 
+</div>

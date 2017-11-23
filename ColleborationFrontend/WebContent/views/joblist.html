@@ -1,0 +1,35 @@
+<center><input type="text" ng-model="searchTxt"><span class="glyphicon glyphicon-search"></span>Search Jobs</center>
+<br><hr>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>JobTitle</th>
+<th>PostedOn</th>
+<th>SkillsRequired</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="job in jobs | filter:searchTxt">
+<td><a href="" ng-click="getJobDetails(job.id)">{{job.jobTitle}}</a></td>
+<td>{{job.postedOn | date: 'medium'}}</td>
+<td>{{job.skillsRequired}}</td>
+</tr>
+</tbody>
+</table>
+
+
+<div ng-show="showJobDetails">
+
+Job Details
+
+<pre>
+Job Title:{{job.jobTitle}}
+job Description:{{job.jobDescription}}
+job Skills Required:{{job.skillsRequired}}
+job Salary:{{job.salary}}
+job Location{{job.location}}
+job Company Name{{job.companyname}}
+job Posted On Date:{{job.postedOn}}
+
+</pre>
+</div>

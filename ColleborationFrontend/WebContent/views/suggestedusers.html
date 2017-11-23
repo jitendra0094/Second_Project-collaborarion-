@@ -1,0 +1,14 @@
+<table class= "table table-striped">
+<tbody>
+<tr ng-repeat="user in suggestedUsrs">
+<td>{{user.firstname}}</td>
+<td>{{user.lastname}}</td>
+<td>{{user.role}}</td>
+<td>{{user.email}}</td>
+<td ng-if= "user.online">YES</td>
+<td ng-if ="!user.online">NO</td>
+<td>
+<td><a class = "btn btn-default">Send Friend Request</a></td>
+</tr>
+</tbody>
+</table>

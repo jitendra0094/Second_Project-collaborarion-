@@ -1,0 +1,46 @@
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+body
+{
+    background-image: url("image/bgimage.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    background-attachment: fixed;
+}
+</style>
+</head>
+
+<div>
+
+<h2 style="text-align: center; color: #0000b3"><font face="Algerian"><strong>View All Friends</strong></font></h2>
+
+<br>
+
+  <center><span ng-if="friends.length==0"><b><h2><strong>You have no Friends</strong></h2></b></span></center>
+
+
+<div class="container-fluid well" style="text-align: center; width="400px">
+<div  ng-repeat="user in friends"> 
+<div class="col-sm-11"  class="row" style="text-align: center; width="400px">
+ <div style=" box-shadow: 5px 5px 5px #000;" > 
+<table class="table table-hover table-responsive" >
+<tr>
+<td><img src="http://localhost:8080/ColleborationMiddleware/getimage/{{user}}" height="60px" width="60px" 
+alt="Image Not Available" class="img-circle">   </td>     
+<td style="color: black"><h4><strong>UserName: </strong> {{user}}</h4></td>	
+
+
+</tr> 
+
+</table>
+            
+ </div>        
+</div></div>
+
+<div data-ng-if="!friends">
+							You have no friends.				</div>
+							
+							
+							
+</div></div> 							

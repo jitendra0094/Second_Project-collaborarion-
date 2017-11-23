@@ -1,0 +1,103 @@
+<div class="container">
+<span style="color:red">{{error}}</span>
+
+
+<form>
+<div class="form-group">
+Enter Job Title:
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+<input type="text" ng-model="job.jobTitle" placeholder="Enter Your Job Title" class="form-control">
+
+</div>
+</div>
+
+<div class="form-group">
+Enter Job Description:
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+<textarea ng-model="job.jobDescription" placeholder="Enter Your Job Description" class="form-control"></textarea>
+</div></div>
+
+<div class="form-group">
+Enter the value SkillsRequried:
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+<input type="text" ng-model="job.skillsRequired" placeholder="Enter Your Job skills" class="form-control">
+</div></div>
+
+<div class="form-group">
+Enter the value Salary:
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+<input type="text" ng-model="job.salary" placeholder="Enter salary" class="form-control">
+</div></div>
+
+<div class="form-group">
+Enter the value Location
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+<input type="text" ng-model="job.location" placeholder="Enter Location" class="form-control">
+</div>
+</div>
+<div class="form-group">
+Enter Campany Name:
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
+<input type="text" ng-model="job.companyname" placeholder="Enter Company Name" class="form-control">
+</div></div>
+
+
+<input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Post Job" ng-click="addJob()">
+
+</form>
+</div>
+<br><br>
+
+
+
+
+
+
+<pre>
+List of All Jobs
+</pre>
+
+
+
+
+
+
+<table class="table table-striped">
+<thead>
+<tr>
+<th>JobTitle</th>
+<th>PostedOn</th>
+<th>SkillsRequired</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="job in jobs">
+<td><a href="" ng-click="getJobDetails(job.id)">{{job.jobTitle}}</a></td>
+<td>{{job.postedOn | date: 'medium'}}</td>
+<td>{{job.skillsRequired}}</td>
+</tr>
+</tbody>
+</table>
+
+<div ng-show="showJobDetails">
+
+Job Details
+
+
+<pre>
+Job Title:{{job.jobTitle}}
+job Description:{{job.jobDescription}}
+job Skills Required:{{job.skillsRequired}}
+job Salary:{{job.salary}}
+job Location{{job.location}}
+job Company Name{{job.companyname}}
+job Posted On Date:{{job.postedOn}}
+
+</pre>
+</div>
