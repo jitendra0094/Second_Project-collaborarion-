@@ -21,9 +21,10 @@ import com.colleboration.model.Job;
 import com.colleboration.model.ProfilePicture;
 import com.colleboration.model.User;
 
-@ComponentScan(basePackages="com.colleboration")
+
 @Configuration
 @EnableTransactionManagement
+@ComponentScan(basePackages="com.colleboration")
 public class DBConfig {
 	
 	@Bean
@@ -31,7 +32,7 @@ public class DBConfig {
 		LocalSessionFactoryBuilder lsf= new LocalSessionFactoryBuilder(getDataSource());
 		Properties hibernateProperties=new Properties();
 		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
-		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create");
+		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
 		Class classes[]=new Class[]{User.class, Job.class, BlogPost.class,BlogComment.class,Error.class,ProfilePicture.class,Friend.class,Chat.class};
