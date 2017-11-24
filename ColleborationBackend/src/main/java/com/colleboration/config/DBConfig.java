@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
@@ -20,6 +21,7 @@ import com.colleboration.model.Job;
 import com.colleboration.model.ProfilePicture;
 import com.colleboration.model.User;
 
+@ComponentScan(basePackages="com.colleboration")
 @Configuration
 @EnableTransactionManagement
 public class DBConfig {
@@ -29,7 +31,7 @@ public class DBConfig {
 		LocalSessionFactoryBuilder lsf= new LocalSessionFactoryBuilder(getDataSource());
 		Properties hibernateProperties=new Properties();
 		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
-		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
+		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
 		Class classes[]=new Class[]{User.class, Job.class, BlogPost.class,BlogComment.class,Error.class,ProfilePicture.class,Friend.class,Chat.class};

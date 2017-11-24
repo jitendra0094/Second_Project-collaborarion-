@@ -20,7 +20,7 @@ public class BlogPostDaoImpl implements BlogPostDao {
 
 
 	@Autowired
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 	
 	public BlogPostDaoImpl(SessionFactory sessionFactory) {
 		this.sessionFactory=sessionFactory;

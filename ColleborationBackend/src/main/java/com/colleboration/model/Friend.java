@@ -6,8 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
 @Entity
 @Table(name="Friend")
+@Component
 public class Friend {
 	
 	@Id

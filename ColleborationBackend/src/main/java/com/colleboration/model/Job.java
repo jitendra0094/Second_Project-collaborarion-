@@ -8,10 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
 
 
 @Entity
 @Table(name="Jobs")
+@Component
 public class Job {
 
 	@Id

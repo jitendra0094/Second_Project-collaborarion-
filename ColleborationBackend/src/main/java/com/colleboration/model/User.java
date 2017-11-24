@@ -7,12 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.stereotype.Component;
 
-
-
+@Component
 @Entity 
-	 @Table(name="UserTable") 
-      public class User{ 
+@Table(name="User") 
+public class User{ 
 	
 	@Id
 	private String username;

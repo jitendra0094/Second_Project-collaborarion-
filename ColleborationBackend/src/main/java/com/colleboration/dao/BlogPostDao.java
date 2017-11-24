@@ -5,8 +5,6 @@ import java.util.List;
 import com.colleboration.model.BlogComment;
 import com.colleboration.model.BlogPost;
 
-
-
 public interface BlogPostDao {
 	
 

@@ -9,9 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
 
 @Entity
 @Table(name="BlogComment")
+@Component
 public class BlogComment {
 
 	@Id
