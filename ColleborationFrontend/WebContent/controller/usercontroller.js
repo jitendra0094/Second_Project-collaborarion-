@@ -3,7 +3,7 @@
  */
 
 
-//app.controller('UserController', function($scope,UserService,$location,$rootScope,$cookieStore,$window) 
+
 app.controller('UserController', function($scope,UserService,$location,$rootScope,$cookieStore) 
 	{
 	

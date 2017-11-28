@@ -1,13 +1,14 @@
 
 /**
  * Angular JS module and routeprovider configuration 
+
  */
 var app=angular.module("app",['ngRoute','ngCookies'])
 app.config(function($routeProvider){
 	$routeProvider
 	.when('/home',{
 		templateUrl:'views/home.html',
-		controller:'BlogPostController'	
+		controller:'UserController'	
 	})
 	.when('/aboutus',{
 		templateUrl:'views/aboutus.html'
