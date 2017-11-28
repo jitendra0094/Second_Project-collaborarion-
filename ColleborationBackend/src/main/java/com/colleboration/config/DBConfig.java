@@ -24,14 +24,14 @@ import com.colleboration.model.User;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages="com.colleboration")
+@ComponentScan("com.colleboration")
 public class DBConfig {
 	
 	@Bean
 	public SessionFactory sessionFactory() {
 		LocalSessionFactoryBuilder lsf= new LocalSessionFactoryBuilder(getDataSource());
 		Properties hibernateProperties=new Properties();
-		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle11gDialect");
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);

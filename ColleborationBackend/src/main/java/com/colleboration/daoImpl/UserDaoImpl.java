@@ -17,7 +17,7 @@ public class UserDaoImpl implements UserDao {
 
 
 	@Autowired
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 	
 	public UserDaoImpl(SessionFactory sessionFactory) 
 	{
