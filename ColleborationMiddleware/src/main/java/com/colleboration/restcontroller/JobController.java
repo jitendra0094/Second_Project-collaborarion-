@@ -25,6 +25,10 @@ import com.colleboration.service.UserService;
 public class JobController {
 	
 
+	 public JobController() {
+		  System.out.println("JOBCONTROLLER INSTANTIATED");
+	  }
+
 	@Autowired
 	private JobDao jobDao;
 	@Autowired

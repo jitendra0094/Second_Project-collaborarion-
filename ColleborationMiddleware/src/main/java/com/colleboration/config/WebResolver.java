@@ -21,7 +21,7 @@ public class WebResolver extends WebMvcConfigurerAdapter {
 	
 		{
 			InternalResourceViewResolver internalResolver = new InternalResourceViewResolver();
-			internalResolver.setPrefix("/WEB_INF/");
+			internalResolver.setPrefix("/WEB_INF/views");
 			internalResolver.setSuffix(".jsp");
 			System.out.println("ViewResolver is Created");
 			return internalResolver;

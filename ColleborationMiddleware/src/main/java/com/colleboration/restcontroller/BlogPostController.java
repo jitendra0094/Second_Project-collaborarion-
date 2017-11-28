@@ -24,11 +24,13 @@ import com.colleboration.model.User;
 
 @RestController
 public class BlogPostController {
+	
+	
 
 	@Autowired
-	BlogPostService blogPostService;
+	private BlogPostService blogPostService;
 	@Autowired
-	UserService userService;
+	private UserService userService;
 
 
 	 public BlogPostController() {
@@ -59,8 +61,6 @@ public class BlogPostController {
 		 }
 		}
 	 
-
-		
 		@GetMapping(value="/getblogs/{approved}")
 		// /getblogs/0 -> blogs waiting for approval
 		// /getblogs/1 -> blogs which are approved

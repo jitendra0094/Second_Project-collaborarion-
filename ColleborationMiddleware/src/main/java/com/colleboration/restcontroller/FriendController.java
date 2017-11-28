@@ -22,8 +22,14 @@ import com.colleboration.service.FriendService;
 @RestController
 public class FriendController {
 	
+
+	 public FriendController() {
+		  System.out.println("FRIEND CONTROLLER INSTANTIATED");
+	  }
+	
 	@Autowired
 	private FriendService friendService;
+	
 	@RequestMapping(value="/getSuggestedusers",method=RequestMethod.GET)
 	public ResponseEntity<?> getSuggestedUsers(HttpSession session){
 		String username=(String)session.getAttribute("username");

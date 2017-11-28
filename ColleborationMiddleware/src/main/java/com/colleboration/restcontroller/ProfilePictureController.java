@@ -21,10 +21,16 @@ import com.colleboration.model.Error;
 public class ProfilePictureController {
 	
 	
-	@Autowired
-private ProfilePictureDao profilePictureDao;
+
+	 public ProfilePictureController() {
+		  System.out.println("ProfilePicure INSTANTIATED");
+	  }
+	
+	 @Autowired
+    private ProfilePictureDao profilePictureDao;
+	
 	@RequestMapping(value="/uploadprofilepic",method=RequestMethod.POST)
-public ResponseEntity<?> uploadProfilePicture(@RequestParam CommonsMultipartFile image,HttpSession session){
+    public ResponseEntity<?> uploadProfilePicture(@RequestParam CommonsMultipartFile image,HttpSession session){
 	User users=(User)session.getAttribute("user");
 	if(users==null)		{
 		    Error error=new Error(3,"UnAuthorized user");
@@ -35,7 +41,7 @@ public ResponseEntity<?> uploadProfilePicture(@RequestParam CommonsMultipartFile
 	profilePicture.setImage(image.getBytes());
 	profilePictureDao.save(profilePicture);
 	return new ResponseEntity<User>(users,HttpStatus.OK);
-}
+     }
 	
 	@RequestMapping(value="/getprofilepic/{username}", method=RequestMethod.GET)
 	public @ResponseBody byte[] getProfilePic(@PathVariable String username,HttpSession session){
